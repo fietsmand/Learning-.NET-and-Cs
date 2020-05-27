@@ -10,35 +10,25 @@ namespace Hello
         {
             if (args.Length > 0)
             {
-                Console.WriteLine($"Hello {args[0]}!");
+                try
+                {
+                    var generator = new FibonacciGenerator();
+                    foreach (var digit in generator.Generate(Int32.Parse(args[0])))
+                    {
+                        Console.WriteLine(digit);
+                    }
+                    
+                }
+                catch (System.Exception)
+                {
+                    Console.WriteLine("The parameter supplied is not of Number type.");
+                }
+                
             }
             else
             {
-                Console.WriteLine("Hello!");
+                Console.WriteLine("No parameters have been supplied, please add `-- <NUMBER>` to the end of the command");
             }
-
-            Console.WriteLine("Fibonacci Numbers 1-15:");
-
-            for (int i = 0; i < 15; i++)
-            {
-                Console.WriteLine($"{i + 1}: {FibonacciNumber(i)}");
-            }
-        }
-
-        static int FibonacciNumber(int n)
-        {
-            int a = 0;
-            int b = 1;
-            int tmp;
-
-            for (int i = 0; i < n; i++)
-            {
-                tmp = a;
-                a = b;
-                b += tmp;
-            }
-
-            return a;
         }
     }
 }
