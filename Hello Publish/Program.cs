@@ -1,14 +1,44 @@
-﻿// Imports all from System namespace into current file scope
-using System;
+﻿using System;
 
-namespace Hello_Publish
+namespace Hello
 {
     class Program
     {
+
+        // Adding `--` to the end of a dotnet command, anything after will be added as an argument, and will be stored in the first parameter of the `Main` method
         static void Main(string[] args)
         {
-            // Console is included in System
-            Console.WriteLine("Hello World!");
+            if (args.Length > 0)
+            {
+                Console.WriteLine($"Hello {args[0]}!");
+            }
+            else
+            {
+                Console.WriteLine("Hello!");
+            }
+
+            Console.WriteLine("Fibonacci Numbers 1-15:");
+
+            for (int i = 0; i < 15; i++)
+            {
+                Console.WriteLine($"{i + 1}: {FibonacciNumber(i)}");
+            }
+        }
+
+        static int FibonacciNumber(int n)
+        {
+            int a = 0;
+            int b = 1;
+            int tmp;
+
+            for (int i = 0; i < n; i++)
+            {
+                tmp = a;
+                a = b;
+                b += tmp;
+            }
+
+            return a;
         }
     }
 }
