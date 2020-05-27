@@ -6,6 +6,7 @@ namespace Hello
     {
 
         // Adding `--` to the end of a dotnet command, anything after will be added as an argument, and will be stored in the first parameter of the `Main` method
+        // When the application has been published, omit the `--` and just add the paramet directly at the end of the command
         static void Main(string[] args)
         {
             if (args.Length > 0)
