@@ -1,4 +1,7 @@
-## .NET Commands
+# .NET Commands
+
+
+## `dotnet restore`
 
 ```
 dotnet restore
@@ -17,12 +20,17 @@ dotnet pack
 ```
 
 ---
+
+## `dotnet new`
+
 ```
 dotnet new <TEMPLATE>
 ``` 
 Creates a new project based on an optional template
 
 ---
+
+## `dotnet build`
 
 ```bash
 dotnet build
@@ -31,6 +39,8 @@ dotnet build
 Builds a project and all dependencies
 
 ---
+
+## `dotnet build-server`
 
 ```bash
 dotnet build-server <COMMAND>
@@ -47,6 +57,8 @@ Will shut down (by default) all servers started from dotnet
 
 ---
 
+## `dotnet run`
+
 ```bash
 dotnet run
 ```
@@ -54,7 +66,11 @@ dotnet run
 Will run the source code of the current project.
 This command relies on the `dotnet build` command to build the code.
 
+Running with `-p <PROJECT>` option allows you to specify the program to be run.
+
 ---
+
+## `dotnet test`
 
 ```bash
 dotnet test
@@ -63,6 +79,8 @@ dotnet test
 Builds the project and runs a test host application for each test project.
 
 ---
+
+## `dotnet publish`
 
 ```bash
 dotnet publish 
@@ -77,10 +95,13 @@ Compiles the application, reads through the dependencies and then publishes the 
 You might have to specify the runtime to create an executable for OSX like this:
 
 ```dotnet
-    dotnet publish -r <RUNTIME>[e.g. osx.10.10-x64]
+dotnet publish -r <RUNTIME>[e.g. osx.10.10-x64]
 ```
 
 ---
+
+## `dotnet pack`
+
 
 ```bash
 dotnet pack
@@ -88,3 +109,29 @@ dotnet pack
 
 Packs the code into a NuGet package.
 Builds project and creates NuGet Packages (.nupkg files)
+
+---
+
+## `dotnet sln`
+
+```bash
+dotnet sln
+```
+
+Lists or modifies the projects in a .NET Core Solution file.
+
+```bash
+dotnet sln <SOLUTION_FILE> add <PROJECT_PATH>
+```
+
+Adds project to the solution.
+
+---
+
+## `dotnet add`
+
+```bash
+dotnet add <PROJECT> [package | reference] <PACKAGE_NAME | PROJECT_PATH>
+```
+
+Add a NuGet package or a project-to-project reference to the project
