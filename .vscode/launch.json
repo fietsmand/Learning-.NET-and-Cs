@@ -5,7 +5,7 @@
    "version": "0.2.0",
    "configurations": [
         {
-            "name": ".NET Core Launch (console)",
+            "name": ".NET Core Launch Hello World (console)",
             "type": "coreclr",
             "request": "launch",
             "preLaunchTask": "build",
@@ -13,6 +13,19 @@
             "program": "${workspaceFolder}/Hello World/bin/Debug/netcoreapp3.1/Hello World.dll",
             "args": [],
             "cwd": "${workspaceFolder}/Hello World",
+            // For more information about the 'console' field, see https://aka.ms/VSCode-CS-LaunchJson-Console
+            "console": "internalConsole",
+            "stopAtEntry": false
+        },
+        {
+            "name": ".NET Core Launch Hello Publish (console)",
+            "type": "coreclr",
+            "request": "launch",
+            "preLaunchTask": "build",
+            // If you have changed target frameworks, make sure to update the program path.
+            "program": "${workspaceFolder}/Hello Publish/bin/Debug/netcoreapp3.1/Hello Publish.dll",
+            "args": [],
+            "cwd": "${workspaceFolder}/Hello Publish",
             // For more information about the 'console' field, see https://aka.ms/VSCode-CS-LaunchJson-Console
             "console": "internalConsole",
             "stopAtEntry": false
