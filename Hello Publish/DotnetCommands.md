@@ -74,6 +74,12 @@ Publishes the application to a folder for deployment to a hosting system
 
 Compiles the application, reads through the dependencies and then publishes the remaining files to a directory
 
+You might have to specify the runtime to create an executable for OSX like this:
+
+```dotnet
+    dotnet publish -r <RUNTIME>[e.g. osx.10.10-x64]
+```
+
 ---
 
 ```bash
